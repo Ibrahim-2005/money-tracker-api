@@ -1,125 +1,108 @@
-# Money Manager — Flask Web Application
+# 💰 Money Tracker API — Full Stack Web Application
 
-A full-stack **expense & income tracking web application** built using Flask, designed with user authentication, relational database modeling, and deployment best practices.
-
----
-
-### 🔗 Live Demo:      👉 https://money-tracker-zcps.onrender.com   
-
+A production-ready **expense and income tracking system** built using Flask, designed with a backend-first approach.  
+This project demonstrates real-world engineering concepts such as **authentication, user data isolation, relational database design, and scalable backend architecture**.
 
 ---
 
-### 📌 Features
-
-* 🔐 User Authentication
-
-    * Register, Login, Logout
-
-    *  Secure password hashing
-
-    * Session-based access control
-
-* 👤 User-Specific Data
-
-    * Each user sees only their own data
-
-    * Protected routes to prevent data leakage
-
-* 🗂️ Custom Categories
-
-    * Users can create their own categories
-
-    * Categories linked to transactions using foreign keys
-
-* 💸 Transaction Management
-
-    * Add income and expense transactions
-
-    * Manual date selection with automatic fallback
-
-    * Categorized transaction tracking
-
-* 📊 Dashboard Summary
-
-    * Total Income
-
-    * Total Expense
-
-    * Balance calculation
-
-* 🛡️ Validation & Edge Case Handling
-
-    * Prevents invalid or empty inputs
-
-    * Handles stale sessions safely
-
-    * Graceful error handling
-
-* 🚀 Production Deployment
-
-    * Deployed using Gunicorn
-
-    * Hosted on Render
-
-    * Environment variables used for secrets
+## 🔗 Live Demo  
+👉 https://money-tracker-zcps.onrender.com  
 
 ---
 
-### 🧠 Tech Stack
+## 🚀 Key Features
 
-* Backend: Python, Flask
+### 🔐 Authentication & Security
+- User registration, login, and logout  
+- Secure password hashing using Werkzeug  
+- Session-based authentication with protected routes  
+- Prevents unauthorized access and data leakage  
 
-* Frontend: HTML, Jinja2 Templates
+### 👤 User Data Isolation
+- Multi-user support with strict data separation  
+- Each user can only access their own transactions  
+- Ensures privacy and data integrity  
 
-* Database: SQLite
+### ⚡ Backend Architecture
+- Designed using **RESTful principles** for modular and scalable backend structure  
+- Clean route organization and separation of concerns  
+- Easily extendable for future features  
 
-* Authentication: Werkzeug Password Hashing
+### 💸 Transaction Management
+- Add, update, and delete income & expense records  
+- Categorized transaction tracking  
+- Flexible date handling with default fallbacks  
 
-* Deployment: Gunicorn + Render
+### 🗂️ Category Management
+- Create and manage custom categories  
+- Linked to transactions using foreign keys  
+- Efficient relational querying  
 
-* Version Control: Git & GitHub
+### 📊 Dashboard Analytics
+- Real-time overview of:
+  - Total Income  
+  - Total Expenses  
+  - Net Balance  
+- Aggregated calculations for quick financial insights  
 
----
+### 🛡️ Validation & Error Handling
+- Input validation for reliability  
+- Handles edge cases (invalid input, session expiry)  
+- Graceful error handling  
 
-### 🗃️ Database Design (High Level)
-
-* users
-
-    * id, username, password, created_at
-
-* categories
-
-    * id, user_id, name
-
-* transactions
-
-    * id, user_id, category_id, amount, type, date
-
-> Relational integrity is enforced using foreign keys, ensuring clean and secure data modeling.
----
-
-# ⚙️ Local Setup Instructions
-
-1. `git clone` "https://github.com/Ibrahim-2005/Projects.git"
-
-2. `cd` Money_Tracker_UI
-
-3. `pip install -r requirements.txt`
-
-4. `python app.py`
-
-### Open browser and visit:
-
-http://127.0.0.1:5000
-
-
-
-# 👤 Author
-
->Mohamed Ibrahim
-
-
+### 🚀 Deployment
+- Deployed using **Gunicorn (WSGI server)**  
+- Hosted on **Render**  
+- Environment variables used for secure configuration  
 
 ---
 
-## ⭐ If you like this project, give it a star on GitHub!
+## 🧠 Tech Stack
+
+| Layer        | Technology |
+|-------------|-----------|
+| Backend     | Python, Flask |
+| Frontend    | HTML, CSS, Jinja2 |
+| Database    | SQLite |
+| Authentication | Werkzeug Security |
+| Deployment  | Gunicorn, Render |
+| Version Control | Git, GitHub |
+
+---
+
+## 🗃️ Database Design
+
+The application follows a **normalized relational schema**:
+
+### Users
+- `id`, `username`, `password`, `created_at`
+
+### Categories
+- `id`, `user_id`, `name`
+
+### Transactions
+- `id`, `user_id`, `category_id`, `amount`, `type`, `date`
+
+> Foreign key constraints ensure **data consistency, integrity, and efficient querying**
+
+---
+
+## ⚙️ Local Setup
+
+```bash
+git clone https://github.com/Ibrahim-2005/money-tracker-api
+cd money-tracker-api
+pip install -r requirements.txt
+python app.py
+```
+---
+## 👤 Author
+
+**Mohamed Ibrahim**  
+Backend Developer | Python & Flask  
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub!
