@@ -8,6 +8,13 @@ import os
 app=Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "dev-key")
 
+
+@app.route("/health", methods=["GET"])
+def health() -> dict:
+    """Simple liveness probe — returns 200 OK if the app is running."""
+    return {"status": "ok"}, 200
+
+
 def get_db():
     conn=sqlite3.connect("money_manager.db")
     conn.row_factory = sqlite3.Row
